@@ -6,8 +6,9 @@
   "scripts": {
     "start": "NODE_ENV=prod node dist/server.js",
     "copy-assets": "ts-node tools/copyAssets",
+    "start:build": "tsc -p .",
     "clean": "rimraf dist/*",
-    "build": "yarn clean && yarn build && yarn copy-assets",
+    "build": "yarn clean && yarn start:build && yarn copy-assets",
     "dev": "NODE_ENV=dev nodemon",
     "lint": "eslint . --ext .ts"
   },
