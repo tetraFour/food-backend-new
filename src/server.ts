@@ -15,7 +15,7 @@ import { AuthController, UserController, PagesController } from './controllers';
 import { PassportConfig } from './config/passport.config';
 
 const app = new App({
-  port: parseInt(process.env.PORT as string),
+  port: parseInt(process.env.PORT) || 5000,
   middlewares: [
     express.json({ limit: '50mb' }),
     express.urlencoded({ extended: true }),

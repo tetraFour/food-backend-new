@@ -51,15 +51,12 @@ class App {
 
   private async databaseConnection() {
     try {
-      await mongoose.connect(
-        isDev ? process.env.MONGODB_URI_DEV : process.env.MONGODB_URI,
-        {
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-          useCreateIndex: true,
-          useFindAndModify: false,
-        },
-      );
+      await mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false,
+      });
 
       console.log('MONGO_DB: SUCCESS');
     } catch (e) {
