@@ -25,7 +25,7 @@ const app = new App({
       origin: process.env.DEVELOPMENT,
     }),
     session({
-      secret: process.env.SESSION_SECRET,
+      secret: 'sessionsecretfoodbackend2021',
       resave: true,
       saveUninitialized: true,
     }),
