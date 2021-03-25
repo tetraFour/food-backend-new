@@ -1,5 +1,5 @@
 import express from 'express';
-import { Product, Restaurant } from '~/models';
+import { Product, Restaurant } from '../models';
 
 const finalProducts = async (
   productType: string,

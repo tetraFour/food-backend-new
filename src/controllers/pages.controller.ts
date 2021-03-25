@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
-import { finalProducts } from '~/utils';
+import { finalProducts } from '../utils';
 
 import { Restaurant, User, Product, Basket } from '../models';
 import { IControllerBase } from '../interfaces';

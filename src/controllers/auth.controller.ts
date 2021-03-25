@@ -1,14 +1,9 @@
 import * as express from 'express';
 import { NextFunction, Request, Response } from 'express';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import { validationResult } from 'express-validator';
 import passport from 'passport';
-import { IUserModel } from '~/models/user.model';
 
 import { User } from '../models';
 import { IControllerBase } from '../interfaces';
-import { signInValidation, signUpValidation } from '../validations';
 
 class AuthController implements IControllerBase {
   public path = '/api/auth';

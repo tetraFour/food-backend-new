@@ -1,6 +1,5 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
-import { IUserModel } from '~/models/user.model';
 
 import { Basket, User } from '../models';
 import { IControllerBase } from '../interfaces';

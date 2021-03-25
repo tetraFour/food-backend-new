@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { Request, Response } from 'express';
-import { cloudinary } from '~/config/cloudinary.config';
+import { cloudinary } from '../config/cloudinary.config';
 
 import { Product, Restaurant } from '../models';
 import { IControllerBase } from '../interfaces';
