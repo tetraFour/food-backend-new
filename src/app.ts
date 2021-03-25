@@ -1,7 +1,7 @@
 import express, { Router } from 'express';
 import mongoose from 'mongoose';
 import server, { Server } from 'http';
-import { isDev } from '~/utils';
+import { isDev } from './utils';
 
 class App {
   private readonly app: express.Application;
