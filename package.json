@@ -7,8 +7,7 @@
     "start": "NODE_ENV=prod node dist/server.js",
     "copy-assets": "ts-node tools/copyAssets",
     "clean": "rimraf dist/*",
-    "start:build": "npm-run-all clean build copy-assets",
-    "build": "tsc -p .",
+    "build": "npm-run-all clean build copy-assets",
     "dev": "NODE_ENV=dev nodemon",
     "lint": "eslint . --ext .ts"
   },
