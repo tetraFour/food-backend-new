@@ -15,9 +15,19 @@ class ProductController implements IControllerBase {
 
   public initRoutes = (): void => {
     this.router.delete(`${this.path}/:id`, this.deleteProduct);
+    this.router.get(`${this.path}/get-products`, this.getProducts);
     this.router.post(`${this.path}`, this.createProduct);
     this.router.patch(`${this.path}/:id`, this.updateProduct);
-    this.router.get(`${this.path}`, this.getCurrentProduct);
+    this.router.get(`${this.path}/:id`, this.getCurrentProduct);
+  };
+
+  private getProducts = async (req: Request, res: Response) => {
+    try {
+      const food = await Product.find().populate('restaurantId');
+      return res.status(200).send(food);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   private getCurrentProduct = async (req: Request, res: Response) => {
@@ -35,7 +45,7 @@ class ProductController implements IControllerBase {
     try {
       const product = await Product.findByIdAndDelete(req.params.id);
       if (product) {
-        return res.redirect('/tables-page');
+        return res.status(200).send('ok');
       }
     } catch (e) {
       console.log(e);

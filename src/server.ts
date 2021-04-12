@@ -11,7 +11,13 @@ import partials from 'express-partials';
 
 import App from './app';
 import { LoggerMiddleware } from './middleware';
-import { AuthController, UserController, PagesController } from './controllers';
+import {
+  AuthController,
+  UserController,
+  PagesController,
+  ProductController,
+  RestaurantController,
+} from './controllers';
 import { PassportConfig } from './config/passport.config';
 
 const app = new App({
@@ -42,6 +48,8 @@ const app = new App({
     new AuthController(),
     new UserController(),
     new PagesController(),
+    new ProductController(),
+    new RestaurantController(),
   ],
 });
 

@@ -20,7 +20,7 @@ const options = {
 
 export class PassportConfig {
   constructor() {
-    // this.initPassportConfigJWT();
+    this.initPassportConfigJWT();
     this.initPassportConfigLocal();
   }
 
